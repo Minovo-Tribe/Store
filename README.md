@@ -1,7 +1,5 @@
 # Store
 This is a mock e-commerce website only for education purpose inspired by Myntra and Amazon.  
-Myntra's official website - https://www.myntra.com/  
-Amazon's official website - https://www.amazon.com/
 
 ## Technology Overview
 
@@ -33,4 +31,7 @@ run cmd `ng build`
 **To build in watch mode**    
 run cmd `ng build --watch`
 
-#### App local url - http://localhost:2000/
+#### App local url - http://localhost:2000/  
+
+Myntra's official website - https://www.myntra.com/    
+Amazon's official website - https://www.amazon.com/  

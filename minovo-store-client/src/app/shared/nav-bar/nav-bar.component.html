@@ -1,0 +1,107 @@
+<p>
+  <!-- Navbar Start -->
+  <mat-toolbar>
+    <mat-toolbar-row class="main-nav">
+      <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"
+        (click)="snav.toggle(); backToMenu();">
+        <mat-icon>menu</mat-icon>
+      </button> -->
+      <span class="brand" [routerLink]="['/home']">Minovo Store.</span>
+
+      <!-- Search bar -->
+      <div class="search-bar input-group md-form form-sm form-2 pl-0">
+        <input class="form-control my-0 py-1 lime-border" type="text" placeholder="Search for products, brands and more"
+          aria-label="Search">
+        <div class="input-group-append">
+          <mat-icon>search</mat-icon>
+        </div>
+      </div>
+
+      <span class=" example-spacer"></span>
+      <div class="greeting">{{greeting}}</div>
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>dialpad</mat-icon>
+          <span>Redial</span>
+        </button>
+        <button mat-menu-item disabled>
+          <mat-icon>voicemail</mat-icon>
+          <span>Check voice mail</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>notifications_off</mat-icon>
+          <span>Disable alerts</span>
+        </button>
+      </mat-menu>
+      <button mat-icon-button class="favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon matBadge="15" matBadgeSize="small" matBadgeColor="warn">shopping_cart</mat-icon>
+      </button>
+    </mat-toolbar-row>
+    <mat-toolbar-row class="sub-navbar">
+      <mat-icon> add_location</mat-icon>
+      <span class="address">
+        Bhubaneswar 751019
+      </span>
+      <span class=" example-spacer"></span>
+      <div class="hot-menu">
+        <a mat-stroked-button [routerLink]="['/deals']" routerLinkActive="active">Today's Deals</a>
+        <a mat-stroked-button [routerLink]="['/products','Men']" routerLinkActive="active"
+          [disabled]="loading.isLoadingProductMen">Men</a>
+        <a mat-stroked-button [routerLink]="['/products', 'Women']" routerLinkActive="active"
+          [disabled]="loading.isLoadingProductWomen">Women</a>
+        <a mat-stroked-button>Buy Again</a>
+        <a mat-stroked-button>Customer Service</a>
+      </div>
+      <span class="example-spacer"></span>
+      <a mat-stroked-button [routerLink]="['/add-product']">Add Product</a>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <!-- //Navbar ends// -->
+
+  <!-- Container Start -->
+  <mat-sidenav-container class="example-sidenav-container" (backdropClick)="backToMenu()">
+    <!-- <mat-sidenav #snav [mode]="'over'" style="min-width: 13rem;" class="scroller">
+      <div class="slider" [ngStyle]="{left: sliderLeft}">
+        <mat-nav-list class="main-nav-list">
+          <div>
+            <mat-list *ngFor="let item of sideNavList">
+              <mat-list-item class="header" [disabled]="true"> {{item.heading}}
+              </mat-list-item>
+              <mat-list-item class="list" *ngFor="let listItem of item.list" (click)="selectListItem(listItem)">
+                {{listItem.heading}} <mat-icon class="mat-icon-rtl-mirror" *ngIf="listItem.list?.length">chevron_right
+                </mat-icon>
+              </mat-list-item>
+            </mat-list>
+          </div>
+        </mat-nav-list>
+        <mat-nav-list class="sub-nav-list">
+          <div>
+            <span class="back-to-menu" (click)="backToMenu()">
+              <mat-icon>arrow_back</mat-icon> <span>Main Menu</span>
+            </span>
+            <mat-divider></mat-divider>
+            <mat-list *ngFor="let item of selectedList">
+              <mat-list-item class="header" [disabled]="true"> {{item.heading}}
+              </mat-list-item>
+              <mat-list-item class="list" *ngFor="let listItem of item.list" (click)="selectListItem(listItem)">
+                {{listItem}}
+              </mat-list-item>
+            </mat-list>
+          </div>
+        </mat-nav-list>
+      </div>
+
+    </mat-sidenav> -->
+
+    <mat-sidenav-content class="scroller">
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  <!-- Container Ends // -->
+</p>

@@ -1,0 +1,100 @@
+<div class="container-fluid products">
+  <div class="row">
+    <div class="col-6 path">
+      <p class="m-0">
+        Home/Clothing/ <span class="font-weight-bold">{{gender}}'s wear</span> - <span>{{productCount}}</span> items
+      </p>
+    </div>
+    <div class="col-6 text-right">
+      <div class="btn-group sorting-selector">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          Sort by: <span>{{selectedSort.name}}</span>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right">
+          <button class="dropdown-item" type="button" [ngStyle]="{display:selectedSort == item ? 'none': 'block' }"
+            *ngFor="let item of sortingList" (click)="updateSorting(item)">{{item.name}}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="base">
+  <div class="filter-wrapper">
+    <div class="category">
+      <h4 class="title">
+        CATEGORIES
+        <span class="pill clear pointer" (click)="clearCategories()" *ngIf="selectedCategories.length">
+          <span class="clear-icon">
+            <mat-icon>clear</mat-icon>
+          </span> Clear
+        </span>
+      </h4>
+      <section class="category-section">
+        <span class="category-list-section">
+          <ul>
+            <li *ngFor="let item of filters.categories.activeList">
+              <mat-checkbox [(ngModel)]="item.isActive" (ngModelChange)="updateCategories(item)">
+                {{item.category}}
+              </mat-checkbox>
+            </li>
+            <li *ngIf="moreCategories" class="pointer">
+              <span style="color: var(--mid-light);">+ {{filters.categories.count}} more</span>
+            </li>
+          </ul>
+        </span>
+      </section>
+    </div>
+    <mat-divider
+      style="border: none; height: 1px; background-image: linear-gradient(45deg,#fff, var(--mid-light), #fff);">
+    </mat-divider>
+    <div class="brands">
+      <h4 class="title">
+        BRANDS
+        <span class="pill clear pointer" (click)="clearBrands()" *ngIf="selectedBrands.length">
+          <span class="clear-icon">
+            <mat-icon>clear</mat-icon>
+          </span> Clear
+        </span>
+      </h4>
+      <section class="category-section">
+        <span class="category-list-section">
+          <ul>
+            <li *ngFor="let item of filters.brands.activeList">
+              <mat-checkbox [(ngModel)]="item.isActive" (ngModelChange)="updateBrands(item)">
+                {{item.brand}}
+              </mat-checkbox>
+            </li>
+            <li *ngIf="moreBrands" class="pointer">
+              <span style="color: var(--mid-light);">+ {{filters.brands.count}} more</span>
+            </li>
+          </ul>
+        </span>
+      </section>
+    </div>
+  </div>
+  <div class="loader" *ngIf="loading.isProductLoading">
+    <span>
+      <mat-spinner></mat-spinner>
+    </span>
+  </div>
+  <div class="products-wrapper container-fluid scroller"
+    [ngStyle]="{filter: loading.isProductLoading ? 'blur(' + 20 + 'px)': 'none'}">
+    <div class="row">
+      <div class="col-lg-3 col-xl col-x p-1 pt-3" *ngFor="let item of products">
+        <mat-card class="product-card m-3 pointer" (click)="openProduct(item)">
+          <img mat-card-image [src]="item.images[0].src" alt="Photo of a Shiba Inu">
+          <mat-card-content>
+            <mat-card-title>{{item.brand}}</mat-card-title>
+            <mat-card-subtitle>{{item.additionalInfo}}</mat-card-subtitle>
+            <mat-card-title>Rs. {{item.price}}</mat-card-title>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div class="col-lg-3 col-xl col-x p-1 pt-3"></div>
+      <div class="col-lg-3 col-xl col-x p-1 pt-3"></div>
+      <div class="col-lg-3 col-xl col-x p-1 pt-3"></div>
+      <div class="col-lg-3 col-xl col-x p-1 pt-3"></div>
+    </div>
+  </div>
+</div>

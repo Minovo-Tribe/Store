@@ -1,0 +1,34 @@
+.loader {
+  height: 5px;
+  width: 100%;
+  background-color: rgb(109, 109, 109);
+  position: fixed;
+  z-index: 200;
+  top: 0;
+
+  &::after {
+    content: '';
+    height: 5px;
+    width: 0%;
+    background-color: var(--mid-light);
+    position: fixed;
+    z-index: 201;
+    top: 0;
+    animation: load 8s ease-out;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes load {
+  0% {
+    width: 0%;
+  }
+
+  50% {
+    width: 80%;
+  }
+
+  100% {
+    width: 90%;
+  }
+}

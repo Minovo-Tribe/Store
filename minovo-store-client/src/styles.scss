@@ -1,0 +1,48 @@
+/* You can add global styles to this file, and also import other style files */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+:root {
+  --dark: #222831;
+  --mid-dark: #393e46;
+  --mid-light: #00adb5;
+  --light: #eeeeee;
+  --snow: #fff;
+  --mute: #cccccc;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pointer {
+  cursor: pointer;
+  user-select: none;
+}
+
+.scroller {
+  &::-webkit-scrollbar {
+    height: 4px;
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, .26);
+    border-radius: 10px;
+  }
+}

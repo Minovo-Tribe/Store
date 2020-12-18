@@ -1,0 +1,73 @@
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
+const productSchema = new Schema({
+  landingPageUrl: String,
+  loyaltyPointsEnabled: Boolean,
+  adId: String,
+  isPLA: Boolean,
+  productId: Number,
+  product: String,
+  productName: String,
+  rating: Number,
+  ratingCount: Number,
+  isFastFashion: Boolean,
+  futureDiscountedPrice: Number,
+  futureDiscountStartDate: String,
+  discount: Number,
+  brand: String,
+  searchImage: String,
+  effectiveDiscountPercentageAfterTax: Number,
+  effectiveDiscountAmountAfterTax: Number,
+  buyButtonWinnerSkuId: Number,
+  buyButtonWinnerSellerPartnerId: Number,
+  relatedStylesCount: Number,
+  relatedStylesType: String,
+  productVideos: [],
+  inventoryInfo: [
+    {
+      skuId: Number,
+      label: String,
+      inventory: Number,
+      available: Boolean,
+    },
+  ],
+  sizes: String,
+  images: [
+    {
+      view: String,
+      src: String,
+    },
+  ],
+  gender: String,
+  primaryColour: String,
+  discountLabel: String,
+  discountDisplayLabel: String,
+  additionalInfo: String,
+  category: String,
+  mrp: Number,
+  price: Number,
+  advanceOrderTag: String,
+  colorVariantAvailable: Boolean,
+  productimagetag: String,
+  listViews: Number,
+  discountType: String,
+  tdBxGyText: String,
+  catalogDate: String,
+  season: String,
+  year: String,
+  isPersonalised: Boolean,
+  eorsPicksTag: String,
+  personalizedCoupon: String,
+  personalizedCouponValue: Number,
+  productMeta: String,
+  systemAttributes: [
+    {
+      attribute: String,
+      value: String,
+    },
+  ],
+  attributeTagsPriorityList: [],
+});
+
+module.exports = mongoose.model('product', productSchema);

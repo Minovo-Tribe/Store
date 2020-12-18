@@ -1,0 +1,25 @@
+section {
+  margin: 5rem 2rem;
+
+  .title {
+    font-family: 'Russo One', sans-serif;
+    margin: 2rem 0 4rem 0;
+    font-size: 35px;
+    text-transform: uppercase;
+    word-spacing: 10px;
+  }
+}
+
+
+.deals {
+  img {
+    height: 100%;
+  }
+}
+
+::ng-deep mat-carousel {
+  .carousel-indicators {
+    margin: 0;
+    bottom: 5px;
+  }
+}

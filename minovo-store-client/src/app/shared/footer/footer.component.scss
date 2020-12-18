@@ -1,0 +1,17 @@
+footer {
+  background: var(--mid-dark);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 2rem 2rem;
+
+  div {
+    color: var(--light);
+  }
+
+  span {
+    color: var(--mid-light);
+    font-weight: 600;
+  }
+}

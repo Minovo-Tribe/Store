@@ -1,0 +1,33 @@
+.product-view {
+  display: flex;
+  background: #ccc;
+  height: calc(100vh - 94px);
+
+  .product-image-wrapper {
+    width: 30rem;
+    display: flex;
+
+    .image-menu {
+      width: 20%;
+      height: 370px;
+      overflow: auto;
+      padding: 10px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .product-image {
+      width: 80%;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .product-info-wrapper {
+    width: 50%;
+  }
+}

@@ -1,0 +1,11 @@
+<div class="product-view" *ngIf="product">
+  <div class="product-image-wrapper">
+    <div class="image-menu">
+      <img [src]="item.src" alt="" *ngFor="let item of product.images">
+    </div>
+    <div class="product-image">
+      <img [src]="product.images[0].src" alt="">
+    </div>
+  </div>
+  <div class="product-info-wrapper"></div>
+</div>

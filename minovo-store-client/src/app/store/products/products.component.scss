@@ -1,0 +1,170 @@
+h4 {
+  margin-bottom: .5rem;
+}
+
+.products {
+  padding: 1rem;
+
+  .path {
+    display: flex;
+    align-items: center;
+  }
+
+  .sorting-selector {
+    button {
+      font-size: 90%;
+    }
+  }
+}
+
+.base {
+  display: flex;
+  background: var(--light);
+  position: relative;
+
+  .filter-wrapper {
+    width: 16rem;
+    height: calc(100vh - 159px);
+    background: var(--snow);
+    display: flex;
+    flex-direction: column;
+
+    mat-divider {
+      margin: 3px 0;
+    }
+
+    li {
+      transform: scale(0.9);
+
+      ::ng-deep mat-checkbox {
+        .mat-checkbox-layout {
+          margin-bottom: 5px;
+        }
+      }
+    }
+
+
+    .category,
+    .brands {
+      padding: 1rem;
+      overflow: auto;
+    }
+
+    .category {
+      max-height: 50%;
+
+      .category-section {
+        .category-list-section {}
+      }
+    }
+
+    .brands {
+      max-height: 100%;
+    }
+  }
+
+  .loader {
+    position: absolute;
+    height: 100%;
+    z-index: 10;
+    right: 0;
+    left: 13rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .mat-spinner {
+      ::ng-deep circle {
+        stroke: var(--mid-light);
+      }
+    }
+  }
+
+  .products-wrapper {
+    width: 100%;
+    height: calc(100vh - 159px);
+    overflow: auto;
+    position: relative;
+
+    .col-x {
+      min-width: 20% !important;
+    }
+
+    mat-card {
+      padding-bottom: 5px !important;
+
+      img {
+        margin-bottom: 5px;
+      }
+
+      mat-card-content {
+
+        mat-card-title,
+        mat-card-subtitle {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          margin-bottom: 3px;
+        }
+
+        mat-card-title {
+          font-size: 105%;
+        }
+
+        mat-card-subtitle {
+          font-size: 95%;
+          margin-bottom: 5px;
+        }
+      }
+    }
+  }
+}
+
+.dropdown-toggle {
+  width: 195px;
+  position: relative;
+  font-weight: 100;
+  text-align: left;
+
+  &::after {
+    position: absolute;
+    right: 6px;
+    top: 45%;
+  }
+
+  span {
+    font-weight: 400;
+    margin-left: 5px;
+  }
+}
+
+.pill {
+  font-size: 12px;
+  margin-left: .5rem;
+  color: var(--mid-light);
+  border: 1px solid var(--mid-light);
+  padding: 2px 8px;
+  position: relative;
+  border-radius: 20px;
+  transition: .2s;
+
+  .clear-icon {
+    opacity: 0;
+    transition: .3s;
+
+    mat-icon {
+      font-size: 12px;
+      position: absolute;
+      left: 4px;
+      top: 3px;
+    }
+  }
+
+  &:hover {
+    padding-left: 18px;
+
+    .clear-icon {
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,199 @@
+a {
+  text-decoration: none;
+  outline: none;
+}
+
+button {
+  outline: none;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.example-is-mobile .example-toolbar {
+  position: fixed;
+  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+  z-index: 2;
+}
+
+h1.example-app-name {
+  margin-left: 8px;
+}
+
+.example-sidenav-container {
+  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+     causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+  flex: 1;
+}
+
+.example-is-mobile .example-sidenav-container {
+  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+     `<body>` to be our scrolling element for mobile layouts. */
+  flex: 1 0 auto;
+}
+
+.greeting {
+  font-size: 80%;
+  font-weight: 400;
+  text-transform: capitalize;
+  padding: 0 1rem;
+}
+
+.search-bar {
+  width: 45%;
+  position: relative;
+  margin-left: 3vw;
+
+  input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    padding-right: 45px;
+  }
+
+  .input-group-append {
+    background: var(--mid-light);
+    color: var(--light);
+    width: 35px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 5px 5px 0;
+    z-index: 10;
+  }
+}
+
+mat-toolbar {
+  background: var(--light);
+  color: var(--mid-dark);
+  position: fixed;
+  z-index: 100;
+  top: 0;
+
+  .main-nav {
+    height: 55px;
+  }
+
+  .sub-navbar {
+    background: var(--mid-dark);
+    height: 40px;
+    font-size: 70%;
+    font-weight: 400;
+    color: var(--light);
+  }
+}
+
+mat-sidenav-container {
+  margin-top: 95px;
+  height: calc(100vh - 95px);
+}
+
+.brand {
+  color: var(--mid-light);
+  font-size: 110%;
+  margin-left: 10px;
+  user-select: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.address {
+  font-weight: 500;
+  max-width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hot-menu {
+  padding: 0 10px 0 30px;
+
+  a {
+    margin: 0 10px;
+    font-weight: 100;
+    height: 34px;
+
+    &.active {
+      border-bottom: 2px solid var(--mid-light);
+    }
+
+    &:hover {
+      color: #fff;
+      border-bottom: 2px solid var(--light);
+    }
+
+    &:visited,
+    &:link {
+      color: #fff;
+    }
+
+    &:disabled {
+      color: var(--light);
+    }
+  }
+}
+
+mat-sidenav {
+  overflow-x: hidden;
+  width: 20rem;
+  height: calc(100vh - 95px);
+  position: fixed;
+  top: 95px;
+
+  .slider {
+    width: 200%;
+    display: flex;
+    position: absolute;
+    transition: .3s;
+  }
+
+  .main-nav-list,
+  .sub-nav-list {
+    width: 100%;
+
+    .header {
+      font-size: 120%;
+      font-weight: 500;
+    }
+
+    .list {
+      font-size: 95%;
+    }
+
+    .back-to-menu {
+      display: flex;
+      padding: 10px;
+      font-size: 120%;
+      align-items: center;
+      cursor: pointer;
+
+      span {
+        margin-left: 10px;
+      }
+    }
+  }
+
+
+}
+
+mat-sidenav-content {
+  height: calc(100vh - 94px);
+  overflow: auto;
+}
